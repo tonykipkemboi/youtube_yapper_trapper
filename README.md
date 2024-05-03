@@ -1,6 +1,6 @@
 # YoutubeYapperTrapper Crew
 
-Welcome to the YoutubeYapperTrapper Crew project, powered by [crewAI](https://crewai.com) + [AgentOps for observability](https://www.agentops.ai/) + [YouTube Data API](https://developers.google.com/youtube/v3/docs/comments/list). This project allows agents to take a given YouTube URL, extracts all the comments, and generates a final report with insights to inform better content creation.
+Welcome to the YoutubeYapperTrapper Crew project, powered by [CrewAI](https://crewai.com) + [AgentOps for observability](https://www.agentops.ai/) + [YouTube Data API](https://developers.google.com/youtube/v3/docs/comments/list). This project allows agents to take a given YouTube URL, extracts all the comments, and generates a final report with insights to inform better content creation.
 
 ## Crew architecture diagram
 
