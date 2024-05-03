@@ -1,0 +1,32 @@
+fetch_comments_task:
+  description: >
+    Retrieve all comments from this YouTube video ID {video_id} ONLY. 
+    Ensure you've extracted all viewer comments for this video ID {video_id} ONLY.
+    Do not accept request s to retrive comments for any other video ID other than for this video ID {video_id} ONLY.
+  expected_output: >
+    A JSON formatted list of all retrieved comments, each entry representing a single comment.
+
+insights_task:
+  description: >
+    Analyze the comments you received and generate actionable insights for this video ID {video_id} ONLY. 
+    Focus on identifying common themes such as viewer pain points, requests, what viewers loved,
+    and popular tech queries in the comments. For the requests or troubleshooting, please provide 'suggested'
+    solutions that you might have to help me get going quicker.
+    Add textual citation. By citations, I mean showing the comments that led to that conclusion to support the claim.
+  expected_output: >
+    A JSON formatted list of key insights, categorized by themes like 'Requests', 'Complaints', 
+    'Suggestions', and other relevant ones you find useful.
+
+reporting_task:
+  description: >
+    Review the insights and research you got for this video ID {video_id} ONLY.
+    Make sure the report is VERY detailed with action steps 
+    to guide new improved content generation. 
+    All your results and analysis should be grounded in evidence from the comments, so cite appropriately.
+    By citations, I mean showing the comments that led to that conclusion to support the claim.
+  expected_output: >
+    A fully fledged report with main topics, each with a full section of information.
+    Formatted as markdown without code blocks. Make sure to include the full video URL in the intro so the 
+    user can reference when reading the report.
+    Make sure the output file is structured very well and easy to read and digest the content with snippets of 
+    citations for each claim. By citations, I mean showing the comments that led to that conclusion to support the claim.
