@@ -28,7 +28,7 @@ def run():
         return
 
     # print(video_id)
-    video_id = str (video_id)
+    video_id = str (video_id) # does not work all the time
     # print(video_id) https://youtu.be/4ZlK55_44II?si=XJRqaNPCa7FJovFz
 
     inputs = {"video_id": video_id, "url": inURL}
