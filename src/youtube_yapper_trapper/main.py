@@ -27,9 +27,9 @@ def run():
         print("🚨 Invalid YouTube URL provided.")
         return
 
-    print(video_id)
+    # print(video_id)
     video_id = str (video_id)
-    print(video_id)
+    # print(video_id) https://youtu.be/4ZlK55_44II?si=XJRqaNPCa7FJovFz
 
     inputs = {"video_id": video_id, "url": inURL}
     crew = YoutubeCommentsCrew()

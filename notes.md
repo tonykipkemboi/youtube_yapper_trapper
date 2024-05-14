@@ -8,8 +8,8 @@ File "<stdin>", line 1, in <module>
 UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f576' in position 0: character maps to <undefined>
 encoding with 'cp1252' codec failed
 ```
-
-the task.py was edited to resolve the charmap error on windows machine by changing
+C:\Users\Srika\AppData\Local\pypoetry\Cache\virtualenvs\youtube-yapper-trapper-xBqsal-M-py3.12\Lib\site-packages\crewai\the task.py (maybe **fixed by crewai in ver 0.30**)
+was edited to resolve the charmap error on windows machine by changing
 with open(self.output_file, "w") as file: --> with open(self.output_file, "w", encoding='utf-8') as file:
 
 ```
