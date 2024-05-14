@@ -7,16 +7,25 @@ class YouTubeCommentsTool(BaseTool):
     name: str = "YouTube Comments Fetcher"
     description: str = "Fetches all comments from a specified YouTube video URL using the YouTube Data API."
 
+    # https://www.youtube.com/watch?v=sNa_uiqSlJo
+
+    #print(f'vedio ID: yaya')
+
     def _run(self, video_id: str) -> list:
         comments = []
         page_token = ""
         base_url = "https://www.googleapis.com/youtube/v3/commentThreads"
         headers = {"Accept": "application/json"}
 
+        #print(f'vedio ID: {video_id}')
+
         try:
             self.validate_video_id(video_id)
+            # print(f'validate: {validate_video_id}')
         except ValueError as e:
             return f"Error: {str(e)}"
+
+        #print(f'vedio ID: {video_id}')
 
         while True:
             params = {
@@ -64,6 +73,15 @@ class YouTubeCommentsTool(BaseTool):
                                 "Insufficient permissions to access the comments."
                             )
         elif response.status_code == 404:
+            error_details = response.json()
+            if "error" in error_details:
+                if "errors" in error_details["error"]:
+                    for error in error_details["error"]["errors"]:
+                        if error.get("reason") == "private":
+                            raise Exception("The specified video ID is Pivate.")
+                        elif error.get("reason") == "restricted":
+                            raise Exception("The specified channel ID is restrictedwas not found.")
+        elif response.status_code == 401:
             error_details = response.json()
             if "error" in error_details:
                 if "errors" in error_details["error"]:
