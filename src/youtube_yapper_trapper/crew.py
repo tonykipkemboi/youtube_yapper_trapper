@@ -42,7 +42,7 @@ class YoutubeCommentsCrew:
             config=self.agents_config["comment_fetcher"],
             tools=[YouTubeCommentsTool()],
             allow_delegation=False,
-            llm=self.ollama_llm,
+            llm=self.ollama_llm, # you can switch the models (default is Ollama in this case)
             verbose=True,
         )
 
@@ -52,7 +52,7 @@ class YoutubeCommentsCrew:
         """Agent responsible for analyzing comments and generating insights."""
         return Agent(
             config=self.agents_config["insights_analyst"],
-            llm=self.ollama_llm,
+            llm=self.ollama_llm, # you can switch the models (default is Ollama in this case)
             allow_delegation=False,
             verbose=True,
         )
@@ -63,7 +63,7 @@ class YoutubeCommentsCrew:
         """Agent responsible for writing detailed reports based on the analysis."""
         return Agent(
             config=self.agents_config["report_writer"],
-            llm=self.ollama_llm,
+            llm=self.ollama_llm, # you can switch the models (default is Ollama in this case)
             allow_delegation=False,
             verbose=True,
         )
